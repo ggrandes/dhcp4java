@@ -155,6 +155,7 @@ public class DHCPCoreServer implements Runnable {
             // open socket for listening and sending
             this.serverSocket = new DatagramSocket(null);
             this.serverSocket.setBroadcast(true);		// allow sending broadcast
+            this.serverSocket.setReuseAddress(true);	// allow reuse socket address
             this.serverSocket.bind(sockAddress);
 
             // initialize Thread Pool
